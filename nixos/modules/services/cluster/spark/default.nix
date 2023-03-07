@@ -123,7 +123,7 @@ with lib;
         };
         spark-worker = lib.mkIf cfg.worker.enable {
           path = with pkgs; [ procps openssh nettools rsync ];
-          description = "spark master service.";
+          description = "spark worker service.";
           after = [ "network.target" ];
           wantedBy = [ "multi-user.target" ];
           restartIfChanged = cfg.worker.restartIfChanged;
